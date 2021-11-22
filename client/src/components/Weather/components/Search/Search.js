@@ -4,12 +4,12 @@ import "./search.css";
 export default function Search({ callBack }) {
   const [currentCity, setCurrentCity] = useState("");
   const [labelState, setLabelState] = useState("Search__label");
-  const [placeholder, setPlaceholder] = useState("Enter the location");
+  const [placeholder, setPlaceholder] = useState("Enter the city");
 
   function handleInputChange(event) {
     if (labelState === "Search__label Search__warning") {
       setLabelState("Search__label");
-      setPlaceholder("Enter the location");
+      setPlaceholder("Enter the city");
     }
     setCurrentCity(event.target.value);
   }
@@ -17,7 +17,7 @@ export default function Search({ callBack }) {
   function handleInputClick() {
     if (labelState === "Search__label Search__warning") {
       setLabelState("Search__label");
-      setPlaceholder("Enter the location");
+      setPlaceholder("Enter the city");
     }
   }
 
@@ -28,7 +28,7 @@ export default function Search({ callBack }) {
     } else {
       callBack(currentCity);
       setLabelState("Search__label");
-      setPlaceholder("Enter the location");
+      setPlaceholder("Enter the city");
     }
   }
 
